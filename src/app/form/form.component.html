@@ -1,0 +1,61 @@
+<!-- <mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Login</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card> -->
+
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <form>
+            <div>           
+                
+                <mat-form-field>
+                    <mat-label >Username</mat-label>
+                    <input type = "text" [(ngModel)] ="user" name="user" matInput>
+                </mat-form-field>
+            </div>
+            <div>           
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" [(ngModel)] ="pass" name="pass" matInput >
+                </mat-form-field>
+            </div>
+            <div class="button">
+                <button type="submit" (click)="confirm()" mat-button>Login</button>
+            </div>
+            
+            @if(authorize == "true"){
+              <p style="color:yellowgreen">WELCOME</p>
+            }
+            @else if(authorize == "false") {
+              <p style="color:red">Failed</p>
+            }
+        </form>
+    </mat-card-content>
+
+    
+
+</mat-card>
