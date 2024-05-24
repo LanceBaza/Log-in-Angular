@@ -27,11 +27,10 @@
 </mat-card> -->
 
 <mat-card>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title>WELCOME</mat-card-title>
     <mat-card-content>
         <form>
             <div>           
-                
                 <mat-form-field>
                     <mat-label >Username</mat-label>
                     <input type = "text" [(ngModel)] ="user" name="user" matInput>
@@ -44,18 +43,24 @@
                 </mat-form-field>
             </div>
             <div class="button">
-                <button type="submit" (click)="confirm()" mat-button>Login</button>
+                <button type="submit" class="LoginButton" (click)="confirm()" style="color: antiquewhite;" mat-button>LOGIN</button>
             </div>
-            
+            <div>
             @if(authorize == "true"){
               <p style="color:yellowgreen">WELCOME</p>
             }
             @else if(authorize == "false") {
               <p style="color:red">Failed</p>
             }
+            
+            </div>
+            <div class ="SignUp">
+              <p>Not a member?</p>
+              <a href="#" (click) = "gotoRegister()">SignUp Now</a>
+            </div>
         </form>
     </mat-card-content>
-
+    
     
 
 </mat-card>

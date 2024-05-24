@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Output,EventEmitter} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+
+
 
 
 @Component({
@@ -14,6 +16,8 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
+  @Output() Register = new EventEmitter<boolean>();
+  isRegister: any;
   user = "";
   pass = "";
 
@@ -30,7 +34,11 @@ export class FormComponent {
       this.authorize = "false";
       setTimeout(()=>{this.authorize = "null"},2000);
     }
-    
+  }
+
+  gotoRegister(){
+    this.isRegister = false;
+    this.Register.emit(this.isRegister);
   }
 
 }
